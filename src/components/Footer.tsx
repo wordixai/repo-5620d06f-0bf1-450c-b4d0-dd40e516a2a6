@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { 
@@ -11,7 +12,7 @@ import {
   Github
 } from 'lucide-react';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const footerSections = [
     {
       title: '解决方案',
@@ -64,7 +65,6 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      {/* Newsletter Section */}
       <div className="border-b border-white/10">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
@@ -89,10 +89,8 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-          {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center">
@@ -106,7 +104,6 @@ const Footer = () => {
               专注于为企业提供前沿的数字化解决方案，助力客户在数字化时代实现业务增长和创新突破。
             </p>
             
-            {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-center text-white/80">
                 <Phone className="w-4 h-4 mr-3 flex-shrink-0" />
@@ -123,7 +120,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Footer Links */}
           {footerSections.map((section, index) => (
             <div key={index}>
               <h4 className="font-semibold text-lg mb-4">{section.title}</h4>
@@ -144,7 +140,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
@@ -152,7 +147,6 @@ const Footer = () => {
               © 2024 卓越企业. 保留所有权利.
             </div>
             
-            {/* Social Links */}
             <div className="flex items-center space-x-4">
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;

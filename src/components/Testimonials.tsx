@@ -1,8 +1,9 @@
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Star, Quote } from 'lucide-react';
 
-const Testimonials = () => {
+const Testimonials: React.FC = () => {
   const testimonials = [
     {
       name: '张总',
@@ -49,7 +50,6 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 text-accent font-medium mb-4">
             <Star className="w-4 h-4 mr-2" />
@@ -63,7 +63,6 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
             <Card 
@@ -75,19 +74,16 @@ const Testimonials = () => {
               </div>
               
               <CardContent className="p-6">
-                {/* Rating */}
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
 
-                {/* Content */}
                 <p className="text-muted-foreground mb-6 leading-relaxed">
                   "{testimonial.content}"
                 </p>
 
-                {/* Author */}
                 <div className="flex items-center">
                   <Avatar className="w-12 h-12 mr-4">
                     <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
@@ -105,7 +101,6 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Trust Indicators */}
         <div className="text-center">
           <div className="bg-gradient-to-r from-accent/10 via-accent/5 to-accent/10 rounded-3xl p-8 md:p-12">
             <h3 className="text-2xl md:text-3xl font-display font-bold text-primary mb-6">

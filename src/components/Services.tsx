@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
@@ -11,7 +12,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 
-const Services = () => {
+const Services: React.FC = () => {
   const services = [
     {
       icon: Cloud,
@@ -60,7 +61,6 @@ const Services = () => {
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 text-accent font-medium mb-4">
             <Cog className="w-4 h-4 mr-2" />
@@ -74,7 +74,6 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => {
             const IconComponent = service.icon;
@@ -114,7 +113,6 @@ const Services = () => {
           })}
         </div>
 
-        {/* CTA Section */}
         <div className="text-center">
           <div className="bg-gradient-accent p-8 md:p-12 rounded-3xl text-white">
             <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">

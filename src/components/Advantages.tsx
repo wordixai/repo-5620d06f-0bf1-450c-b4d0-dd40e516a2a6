@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
   Award, 
@@ -10,7 +11,7 @@ import {
   Headphones
 } from 'lucide-react';
 
-const Advantages = () => {
+const Advantages: React.FC = () => {
   const advantages = [
     {
       icon: Award,
@@ -73,7 +74,6 @@ const Advantages = () => {
   return (
     <section id="advantages" className="py-24 section-gradient">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 text-accent font-medium mb-4">
             <Award className="w-4 h-4 mr-2" />
@@ -87,7 +87,6 @@ const Advantages = () => {
           </p>
         </div>
 
-        {/* Advantages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {advantages.map((advantage, index) => {
             const IconComponent = advantage.icon;
@@ -121,7 +120,6 @@ const Advantages = () => {
           })}
         </div>
 
-        {/* Bottom Stats */}
         <div className="mt-20 text-center">
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-white/50">
             <h3 className="text-2xl md:text-3xl font-display font-bold text-primary mb-8">

@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -18,7 +18,6 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 accent-gradient rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">E</span>
@@ -28,7 +27,6 @@ const Navigation = () => {
             </span>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <a
@@ -41,7 +39,6 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" size="sm">
               登录
@@ -51,7 +48,6 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -62,7 +58,6 @@ const Navigation = () => {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col space-y-4">

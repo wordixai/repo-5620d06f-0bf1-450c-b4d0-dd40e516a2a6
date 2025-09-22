@@ -1,35 +1,32 @@
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play, Shield, Users, Zap } from 'lucide-react';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with gradient */}
       <div className="absolute inset-0 hero-gradient"></div>
       
-      {/* Background pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"0.05\"%3E%3Ccircle cx=\"30\" cy=\"30\" r=\"2\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+      <div className="absolute inset-0 opacity-20" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }}></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center text-white">
-          {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in">
             <Shield className="w-4 h-4 mr-2" />
             <span className="text-sm font-medium">行业领先的企业解决方案</span>
           </div>
 
-          {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6 animate-slide-up">
             <span className="block text-balance">引领未来</span>
             <span className="block text-accent-foreground/90">创新无限</span>
           </h1>
 
-          {/* Subtitle */}
           <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto text-balance animate-fade-in" style={{ animationDelay: '0.2s' }}>
             我们致力于为企业提供最前沿的技术解决方案，助力您的业务实现跨越式发展，在数字化时代保持竞争优势
           </p>
 
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <Button size="lg" className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg font-semibold group">
               立即开始
@@ -41,7 +38,6 @@ const Hero = () => {
             </Button>
           </div>
 
-          {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
             <div className="text-center">
               <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20">
@@ -68,7 +64,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-1 h-16 bg-white/30 rounded-full relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-8 bg-white rounded-full animate-float"></div>
